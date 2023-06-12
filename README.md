@@ -7,14 +7,19 @@ Note: if there is any problem of the cuda, please switch to CPU
 There are 3 classes for labelMe.
 class.txt
 Use LabelMe to create the 3 segmentation of each picture
+```
 labelme --labels classes.txt
+```
 Convert to VOC format
+```
 python labelme2voc.py {data folder} --labels classes.txt --noviz
-
+```
 Split the data based on 10 blocks
+```
 python split_custom.py --masks="{data folder}/SegmentationClass" --images="{data folder}/JPEGImages" --output="{data folder}/dir" --keep-original
-
+```
 For training:
+```
 python train.py {data folder}/dir0 --dataset=custom --epochs=100 --classes=4 --arch=fcn_resnet101 --device=cpu
 python onnx_export.py --output={output folder}/fcn_reset101_0.onnx
 
@@ -44,11 +49,13 @@ python onnx_export.py --output={output folder}/fcn_reset101_8.onnx
 
 python train.py {data folder}/dir9 --dataset=custom --epochs=100 --classes=4 --arch=fcn_resnet101 --device=cpu
 python onnx_export.py --output={output folder}/fcn_reset101_9.onnx
-
+```
 After the 10 onnx files are created.
 A Nvidia Nano is used for inference
 Build the Nvidia segmentation from source
 https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md
 
 For Inference, details, pls reference this link, https://github.com/dusty-nv/jetson-inference/blob/master/docs/segnet-console-2.md
-Run the segnet_GY_dot.py {input folder} {output folder} --network={onnx file} 
+```
+segnet_GY_dot.py {input folder} {output folder} --network={onnx file} 
+```
