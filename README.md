@@ -14,7 +14,7 @@ Convert to VOC format
 ```
 python labelme2voc.py {data folder} --labels classes.txt --noviz
 ```
-Split the data based on 10 blocks
+Split the data based on 10 blocks, and create 10 trial folder dir0-dir9
 ```
 python split_custom.py --masks="{data folder}/SegmentationClass" --images="{data folder}/JPEGImages" --output="{data folder}/dir" --keep-original
 ```
