@@ -51,7 +51,8 @@ python train.py {data folder}/dir9 --dataset=custom --epochs=100 --classes=4 --a
 python onnx_export.py --output={output folder}/fcn_reset101_9.onnx
 ```
 After the 10 onnx files are created.
-A Nvidia Nano is used for inference
+A Nvidia Nano is used for inference.
+
 Build the Nvidia segmentation from source
 https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md
 
