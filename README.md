@@ -1,4 +1,5 @@
 This code is for TMD project
+
 Please follow this link for the installation
 https://www.highvoltagecode.com/post/edge-ai-semantic-segmentation-on-nvidia-jetson
 Note: if there is any problem of the cuda, please switch to CPU
