@@ -26,7 +26,8 @@ if opt.model_dir:
     opt.input = os.path.join(opt.model_dir, opt.input)
 
 # set the device
-device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+#device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+device = 'cpu'
 print('running on device ' + str(device))
 
 # load the model checkpoint
@@ -59,7 +60,8 @@ print('')
 
 # create example image data
 resolution = checkpoint['resolution']
-input = torch.ones((1, 3, resolution[0], resolution[1])).cuda()
+#input = torch.ones((1, 3, resolution[0], resolution[1])).cuda()
+input = torch.ones((1, 3, resolution[0], resolution[1]))
 print('input size:  {:d}x{:d}'.format(resolution[1], resolution[0]))
 
 # format output model path
