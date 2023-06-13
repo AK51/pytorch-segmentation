@@ -58,5 +58,5 @@ https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md
 
 For Inference, details, pls reference this link, https://github.com/dusty-nv/jetson-inference/blob/master/docs/segnet-console-2.md
 ```
-segnet_GY_dot.py {input folder} {output folder} --network={onnx file} 
+segnet_GY_dot.py {input folder} {output folder} --model={onnx file} --labels=classes.txt --colors=colors.txt 
 ```
