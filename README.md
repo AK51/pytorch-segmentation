@@ -60,3 +60,7 @@ For Inference, details, pls reference this link, https://github.com/dusty-nv/jet
 ```
 python3 segnet_GY_dot.py {input folder} {output folder} --model={onnx file} --labels=classes.txt --colors=colors.txt 
 ```
+For batch images
+```
+./batch_inference.sh {input_folder} {output_folder} {onnx file}
+```
